@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;500;700;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#42617d",
+                        "surface-container-low": "#f7f3f2",
+                        "on-background": "#1c1b1b",
+                        "background": "#fdf8f8",
+                        "on-surface-variant": "#444748",
+                        "primary": "#000000",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f1edec",
+                        "outline-variant": "#c4c7c7",
+                        "secondary-container": "#bddefe",
+                        "on-secondary-container": "#43627e",
+                    },
+                    "spacing": {
+                        "section-gap": "128px",
+                        "gutter": "24px",
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Epilogue"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Epilogue"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Epilogue"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #fdf8f8; color: #1c1b1b; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .break-keep { word-break: keep-all; }
+        .mobile-menu-open { overflow: hidden; }
+    </style>
+</head>
+
+<body class="font-body-md text-on-background">
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100 flex justify-between items-center px-6 md:px-16 py-4 md:py-6">
+        <div class="h-8 md:h-10 flex items-center">
+            <div class="text-lg md:text-2xl font-light tracking-[0.2em] md:tracking-[0.4em] text-zinc-900 cursor-pointer">
+                ANTHOLOGY
+            </div>
+        </div>
+
+        <div class="hidden md:flex gap-12">
+            <a class="font-['Epilogue'] text-xs uppercase tracking-[0.2em] font-medium text-zinc-900 border-b border-zinc-900 pb-1" href="/about.html">About</a>
+            <a class="font-['Epilogue'] text-xs uppercase tracking-[0.2em] font-medium text-zinc-400 hover:text-zinc-900 pb-1 transition-all" href="/people.html">People</a>
+            <a class="font-['Epilogue'] text-xs uppercase tracking-[0.2em] font-medium text-zinc-400 hover:text-zinc-900 pb-1 transition-all" href="/benefits.html">Benefits</a>
+        </div>
+
+        <button id="menu-open" class="md:hidden flex items-center p-2">
+            <span class="material-symbols-outlined text-zinc-900">menu</span>
+        </button>
+    </nav>
+
+    <div id="mobile-overlay" class="fixed inset-0 z-[60] bg-white translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex justify-between items-center px-6 py-4 border-b border-zinc-100">
+            <div class="text-lg font-light tracking-[0.2em]">ANTHOLOGY</div>
+            <button id="menu-close" class="p-2">
+                <span class="material-symbols-outlined text-zinc-900">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-8 p-12 items-center text-center">
+            <a class="font-['Epilogue'] text-xl uppercase tracking-widest text-zinc-900 font-bold" href="/about.html">About</a>
+            <a class="font-['Epilogue'] text-xl uppercase tracking-widest text-zinc-500 hover:text-zinc-900" href="/people.html">People</a>
+            <a class="font-['Epilogue'] text-xl uppercase tracking-widest text-zinc-500 hover:text-zinc-900" href="/benefits.html">Benefits</a>
+            <button class="mt-8 px-10 py-4 bg-primary text-on-primary text-xs uppercase tracking-widest">입사 지원</button>
+        </div>
+    </div>
+
+    <main>
+        <section class="min-h-screen pt-32 px-6 md:px-16 flex flex-col justify-center pb-16 relative">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkI-8-ehZjvltDDiZ_VzOCvP1qzRthc_MdJkRAaCQ9LxqXtVELPKx4QSZWPzb3zq3lC4-VSwLIm7lz1vQLEGaAp4GJAtc91Jvc8VGdcetK9t9cxSir17e-NUG28bfeSHNMYhLx8U_yDOw5iEo0A9qF9uzW4l0J-jVeGRy_yakntTKZDtzFCnBj-dklgABM0Ipu3eBUvJga9D0D4j8v1FED4ztNrHDp3ZN2eY869QTyr5zpdffrk_5nZbO0Q4Cz3fRSMvlWr6terva8" alt="Hero Background" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#fdf8f8] via-[#fdf8f8]/20 to-transparent"></div>
+            </div>
+            <div class="relative z-10 w-full flex flex-col items-center text-center">
+                <div class="mb-10 md:mb-16">
+                    <img alt="ANTHOLOGY Logo" class="h-32 md:h-64 w-auto object-contain mix-blend-multiply opacity-90" src="https://lh3.googleusercontent.com/aida/ADBb0uixW9mgzpCPL3ruCyj_Jd3FFb-Q5USYnDWou9AoyVthifQrN8mhjH7vJ_asj9qppIEIU-2ICCaGnOc97cVCIuYT6ZPzkShO-mm2mAzA7NzfB2USzrujB4URH9khG0t1KZt13n4lrmsSkspx5RHY53nTFDnKY2eLLcI4vHHI5ntO6EZoue4sKHnVHR6Jxq7VrpSCgO6prD8DJ63BMFvN6QiFcRx4n3OBhy6K0E7xAzeGtjym4w7w0vP4RtE" />
+                </div>
+                <div class="max-w-3xl flex flex-col items-center px-4">
+                    <span class="font-label-sm text-[10px] md:text-sm uppercase tracking-widest text-secondary block mb-4 md:mb-6">Introduction</span>
+                    <h1 class="text-4xl md:text-8xl font-black uppercase mb-6 md:mb-8 leading-[1.1] md:leading-[0.9]">앤솔로지</h1>
+                    <p class="font-body-lg text-base md:text-xl text-on-surface-variant break-keep max-w-xl">
+                        우리는 일상의 소중함을 기록하고 보존합니다. 단순한 제품을 넘어, 시간이 흐를수록 가치를 더하는 공예 정신과 현대적인 감각의 조화를 추구합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-16 py-16 md:py-32 max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-12 gap-y-16 md:gap-12">
+                <div class="col-span-12 md:col-span-7">
+                    <div class="aspect-[4/5] bg-surface-container overflow-hidden">
+                        <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY9LS-XxTkefIdD32kbobpUL8bBOntPRk2FBewKAXADtL2Q2ansLESupMe2MprNKSHM0mmSmkwwQtziivab0FLXi27B9bWpt4A61IS7fvFqPY__lHrzTHT9ryRCA9vgwGSuuQdK4fYAQAu3EfC4XpIXuEFtSh7oDi1AdeLW4JaPrgIM-eZxUJJSqYh13DM5_qvLT0aUPLd0dU2Rrr-4wTwwhnt2nWDWIVbuDOCI8IDqSJIaLT6IFZKhhElJH0KERliylZellgAttKV" alt="Craftsmanship" />
+                    </div>
+                    <div class="mt-8 max-w-lg">
+                        <h2 class="text-2xl md:text-4xl font-bold mb-4 md:mb-6 break-keep">장인 정신의 현대적 재해석</h2>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">
+                            앤솔로지는 수천 번의 손길을 거쳐 완성되는 크래프트맨십을 믿습니다. 전통적인 기법을 현대적인 실루엣으로 풀어내어, 당신의 일상에 지속 가능한 아름다움을 제안합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-span-12 md:col-span-5 flex flex-col justify-center">
+                    <div class="bg-secondary-container/30 p-8 md:p-12 mb-8 md:mb-12">
+                        <span class="text-[10px] text-on-secondary-container uppercase mb-4 block">Core Value 01</span>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4">Archive your Ordinary</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">
+                            평범한 하루가 특별한 기록이 되는 순간. 우리는 당신의 모든 순간이 하나의 작품이 되기를 바랍니다.
+                        </p>
+                    </div>
+                    <div class="aspect-square bg-surface-container overflow-hidden">
+                        <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAYSuoJo9MvTgc0ZBr7MSa4wBL0y23BVLImj_OAYYP8o9DKCGp41Mk7G_uMGvdFRjctraufsHghe3xvncqtiO2IVDJe1GQDLPd99cC4fscCo_l7M0hV2muv76cqGunCFF84yZxfMKJ3qZ5gmL17RODssXe0Ua6EQbmxJDckbaejGOa90N762Sxg3UyF_8inqIYY6phw7Lq9BoDKito41jjiS3JmHBrvhjhShAm7QbxI7um3jvY_GLiPqzTh9z6f6aAgiYUH9LT5mcX" alt="Detail" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-16 py-16 md:py-32 max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-12 gap-y-12 md:gap-12 items-end">
+                <div class="col-span-12 md:col-span-4">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 md:mb-8">Process &<br class="hidden md:block" />Quality</h2>
+                    <p class="text-sm md:text-base text-on-surface-variant mb-8 break-keep">
+                        최상급 소재의 선별부터 최종 검수까지, 앤솔로지의 모든 공정은 타협하지 않는 품질 기준을 따릅니다.
+                    </p>
+                    <div class="flex flex-col gap-4">
+                        <div class="border-b border-outline-variant pb-4">
+                            <span class="text-[10px] text-secondary block mb-1">01. Material</span>
+                            <span class="text-base md:text-lg font-bold">프리미엄 오가닉 원사</span>
+                        </div>
+                        <div class="border-b border-outline-variant pb-4">
+                            <span class="text-[10px] text-secondary block mb-1">02. Craft</span>
+                            <span class="text-base md:text-lg font-bold">15년 경력 마스터의 테일러링</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 md:col-span-8">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-[3/4] bg-surface-container overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHs8QfSu_Z5vHCthDzolt7pQVdlXQNYdEJ5irNSJ2zzeDP0mcvjHb3RhpIQoBwce1ANdumNhDQIfqiFx-RAim9h7yJRr9tSTmffCCOoKdPn2POCgffLI3w7cGecQLuAmh9qycbcedAVL_0GsuFQunDYO1DKIpBw7UZi812FxEXENQBcDf-rne6GHFVGvs48ypkNqb3HVv5EP5_4iipxnMatAJz76SkgwoBuZk6s64zixOjJH8eU1VpcSir37Woohg1CiVjDwUFhTzq" alt="Process 1" />
+                        </div>
+                        <div class="aspect-[3/4] bg-surface-container mt-12 md:mt-24 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBriMFabmudN41u24NjSapdCnk1oCFKRm4VmHn8isyUDb6ojsnMmw6l5wg_cNCPViZtdN_LkEN95pLagENwkAOhqPr0oomn0bRYg9Z8R1ESrSCxiG6RavLKNLOrZlSLzGlvCFtMj0GiqgUKgh2rdmCbSfw6nYqutrjqbjSAq7dCEo02IL-hOKUC9Ww_TOs61pP0Id-173kjrPuKP7iwaEBq0qavPNt1EYrxsihJD3_cwGOCZSnl7BCk_YlPTn0DUzBKp0sRQP7TyY0I" alt="Process 2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-16 pb-20 max-w-[1440px] mx-auto text-center">
+            <div class="py-20 bg-surface-container-low border border-zinc-100">
+                <h2 class="text-2xl md:text-4xl font-bold mb-8 break-keep">앤솔로지와 함께 일상을 기록할<br/>동료를 찾습니다.</h2>
+                <button class="w-full md:w-auto px-12 py-5 bg-primary text-on-primary font-medium uppercase tracking-[0.2em]"><a href="https://share.crack.wrtn.ai/7aqgpq4" target="_blank">입사 지원</a></button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full py-16 bg-zinc-50 border-t border-zinc-200 px-6 md:px-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div>
+                <div class="text-lg font-bold tracking-widest mb-4">ANTHOLOGY</div>
+                <div class="text-zinc-400 text-xs">© 2024 ANTHOLOGY. Archive your Ordinary.</div>
+            </div>
+            <div class="flex gap-8 text-xs text-zinc-500 uppercase tracking-widest">
+                <a href="#" class="hover:text-black">Instagram</a>
+                <a href="#" class="hover:text-black">LinkedIn</a>
+                <a href="#" class="hover:text-black">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuOpen = document.getElementById('menu-open');
+        const menuClose = document.getElementById('menu-close');
+        const overlay = document.getElementById('mobile-overlay');
+
+        menuOpen.addEventListener('click', () => {
+            overlay.classList.remove('translate-x-full');
+            document.body.classList.add('mobile-menu-open');
+        });
+
+        menuClose.addEventListener('click', () => {
+            overlay.classList.add('translate-x-full');
+            document.body.classList.remove('mobile-menu-open');
+        });
+
+        // Overlay 밖을 클릭해도 닫히게 하려면 추가
+        overlay.addEventListener('click', (e) => {
+            if(e.target === overlay) {
+                overlay.classList.add('translate-x-full');
+                document.body.classList.remove('mobile-menu-open');
+            }
+        });
+    </script>
+</body>
+</html>

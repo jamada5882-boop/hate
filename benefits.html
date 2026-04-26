@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700;800&family=Manrope:wght@400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "secondary": "#42617d",
+                        "surface-container-low": "#f7f3f2",
+                        "on-background": "#1c1b1b",
+                        "background": "#fdf8f8",
+                        "on-surface-variant": "#444748",
+                        "primary": "#000000",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f1edec",
+                        "outline-variant": "#c4c7c7",
+                        "secondary-container": "#bddefe",
+                        "on-secondary-container": "#43627e",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1c1b1b",
+                    },
+                    "spacing": {
+                        "section-gap": "128px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Epilogue"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Epilogue"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Epilogue"]
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .redacted {
+            background-color: currentColor;
+            color: inherit;
+            cursor: help;
+        }
+
+        .mobile-menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden">
+
+    <nav
+        class="bg-white/90 dark:bg-zinc-950/90 backdrop-blur-sm fixed top-0 w-full z-50 border-b border-zinc-100 dark:border-zinc-900">
+        <div class="flex justify-between items-center px-6 md:px-16 py-6 md:py-8 w-full">
+            <span
+                class="text-xl md:text-2xl font-light tracking-[0.2em] md:tracking-[0.4em] text-zinc-900 dark:text-zinc-50 font-headline-lg">ANTHOLOGY</span>
+
+            <div class="hidden md:flex gap-12 items-center">
+                <a class="font-['Epilogue'] text-xs uppercase tracking-[0.2em] font-medium text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 pb-1 transition-all"
+                    href="/about.html">About</a>
+                <a class="font-['Epilogue'] text-xs uppercase tracking-[0.2em] font-medium text-zinc-400 dark:text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 pb-1 transition-all"
+                    href="/people.html">People</a>
+                <a class="font-['Epilogue'] text-xs uppercase tracking-[0.2em] font-medium text-zinc-900 dark:text-zinc-50 border-b border-zinc-900 dark:border-zinc-50 pb-1"
+                    href="/benefits.html">Benefits</a>
+            </div>
+
+            <button id="menu-open" class="md:hidden flex items-center p-2">
+                <span class="material-symbols-outlined text-zinc-900 dark:text-zinc-50">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-overlay"
+        class="fixed inset-0 z-[60] bg-white dark:bg-zinc-950 translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+        <div class="flex justify-between items-center px-6 py-6 border-b border-zinc-100 dark:border-zinc-900">
+            <span class="text-xl font-light tracking-[0.2em] dark:text-zinc-50">ANTHOLOGY</span>
+            <button id="menu-close" class="p-2">
+                <span class="material-symbols-outlined text-zinc-900 dark:text-zinc-50">close</span>
+            </button>
+        </div>
+        <div class="flex flex-col gap-8 p-12 items-center text-center">
+            <a class="font-['Epilogue'] text-xl uppercase tracking-widest text-zinc-400" href="/about.html">About</a>
+            <a class="font-['Epilogue'] text-xl uppercase tracking-widest text-zinc-400" href="/people.html">People</a>
+            <a class="font-['Epilogue'] text-xl uppercase tracking-widest text-zinc-900 dark:text-zinc-50 font-bold"
+                href="/benefits.html">Benefits</a>
+            <button
+                class="mt-8 px-10 py-4 border border-zinc-900 dark:border-zinc-50 text-xs uppercase tracking-widest dark:text-white">입사
+                지원</button>
+        </div>
+    </div>
+
+    <main class="mt-32 md:mt-48">
+        <section class="px-6 md:px-margin-desktop mb-section-gap">
+            <div class="grid grid-cols-12 gap-y-8 md:gap-gutter items-end">
+                <div class="col-span-12 md:col-span-8">
+                    <h1 class="text-5xl md:text-8xl font-display-xl uppercase mb-8 leading-tight md:leading-none">
+                        Culture &<br />Benefits</h1>
+                    <p class="font-body-lg text-base md:text-xl max-w-xl text-on-surface-variant break-keep">
+                        우리는 평범함을 기록하고 보존하는 일을 합니다. 팀원의 일상이 안온할 때, 비로소 세상을 향한 깊이 있는 시선이 생겨난다고 믿습니다.
+                    </p>
+                </div>
+                <div class="col-span-12 md:col-span-4 flex justify-start md:justify-end">
+                    <div
+                        class="text-left md:text-right border-l-2 md:border-l-0 md:border-r-2 border-secondary pl-4 md:pl-0 md:pr-4">
+                        <span class="font-label-sm text-xs uppercase tracking-widest text-secondary block mb-2">Since
+                            2024</span>
+                        <span class="text-2xl md:text-headline-md font-bold">보편의 특별함</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 md:mt-16 w-full h-[400px] md:h-[716px] relative overflow-hidden group">
+                <img alt="Office"
+                    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRDO-CxprLmLqt2VqPHIe_OpSJcoVVUjar9hm3R_DC88Ygmx6uDEXKPEgFGtroyrg7Vfa2y0z4Qph9XbGfkCAgcf7TWvTWAf0mRdivLVfiIWDPGDS2MueIs5jl4vrJ1FVdAnoaBKRrDTIvjUV4x7tSx7tVYF2OGuQWXZYAzV6nLy2Cs3dguUpxDDzLvTdnOax81-bDrRO7HYFILcan_5SGl2g3VBUFZuIPxburg8euBhAzw7CJm4hO_VPQIWCrHM6fPY58BI9mevS-" />
+                <div class="absolute inset-0 bg-primary/5"></div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-margin-desktop mb-section-gap">
+            <div
+                class="mb-12 md:mb-16 border-b border-outline-variant pb-4 flex flex-col md:flex-row justify-between items-baseline gap-2">
+                <h2 class="text-3xl md:text-headline-lg font-bold uppercase">여성 사원 복지</h2>
+                <span class="font-label-sm text-[10px] md:text-label-sm text-secondary tracking-widest">SUPPORTING
+                    FEMALE LEADERS</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-12">
+                <div class="space-y-6">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG_9L8pJ94zbQ1JS4XUUMpz27eaN5asp4T3sX5gHDGCwJ7qm8DPhObDT6al69R-G-7m0SozjgTDjCC1pZgrvcfzuW-8ec5mdhN-h4uF8h2YywHNqtuxWOp6AVAKvYmTaW5IyTucPBGQOkhbwjZWfYdV33WZoIPe5lhnG9Kuhfx0Hhnkg-rTQu7eyUrlwjTCaEeChLn8oDs9egYRPisLA81RwQe1hlZdKqk0-9be_zlWd1SZakA17TAnS-xbi2vwn2OYz-TNEpkUzo5"
+                            alt="Welfare 1" />
+                    </div>
+                    <div class="pt-4 border-t border-zinc-200">
+                        <h3 class="text-xl md:text-headline-md font-bold mb-2">프리미엄 산후 케어</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">최고급 산후조리원 연계 및 육아 휴직 기간 중
+                            100% 급여 보전을 통해 새로운 생명과의 첫 만남을 축복합니다.</p>
+                    </div>
+                </div>
+                <div class="space-y-6 md:mt-24">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKp7RTfqAXBUGGEUjKGgfeoR47xQ-JBEMTWMCRfzmtep1Vrx4MWEQArTbaIq6b_9YnvodmW78OsbvPSi3LZ09qkJ4L2GurPhPezIiBYAQKMU1BcCqkjxWZw0gMFy_bQaVaNzzznxt5bmecilF6gwdsKFxeuQKcTdQv_CNl45Ri-nYziuwUrSuSdxM96auvM1MXzriBulDsp7LrnLp4o104Pkq12A7OlJHPR8Ts9KNQsH0zJOAe0PbMSYQXsk2iB6Oj6aTkVZwDPulm"
+                            alt="Welfare 2" />
+                    </div>
+                    <div class="pt-4 border-t border-zinc-200">
+                        <h3 class="text-xl md:text-headline-md font-bold mb-2">우먼스 웰니스</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">전문의 정기 상담 및 개인 맞춤형 운동 프로그램을
+                            지원합니다. 신체적 조화가 창의성의 근간입니다.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="aspect-[3/4] overflow-hidden">
+                        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBfdTj-yHSxJ2yO5BVs5I9oajTLULO3Hq365YjX75ZQ9lkQSn1xMrM_jcCCbVYOdK3Dplzv2CdqfhnnDsL3z9Ypi34svRnWxW9I5N50Dyx5gmozkSKy_0uMkxfZ_yLg2RgyN4uUQb8ERjb0w8GaaecHpoCvSBCS2fEXRURNF5B358kUvRrFJOsc0dvDGqnyQCfzh3T6LhXIhyzcpuY_sNTOh7PtOrZ-J7c5oxnjpr5PfHBukynuyOXX7ArmA2SX7E5T3GOCQpQ8z-S"
+                            alt="Welfare 3" />
+                    </div>
+                    <div class="pt-4 border-t border-zinc-200">
+                        <h3 class="text-xl md:text-headline-md font-bold mb-2">유연한 성장 커리어</h3>
+                        <p class="text-sm md:text-base text-on-surface-variant break-keep">육아기 단축 근무와 시차 출퇴근제를 보장하며, 복귀
+                            시 리더십 가산점 제도로 성장을 돕습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-section-gap relative">
+            <div class="bg-on-surface py-20 md:py-32 px-6 md:px-margin-desktop overflow-hidden">
+                <div class="max-w-7xl mx-auto relative z-10">
+                    <div class="flex flex-col lg:flex-row justify-between items-start mb-16 md:mb-24 gap-12">
+                        <div class="max-w-xl">
+                            <div class="flex items-center gap-4 mb-6 md:mb-8">
+                                <span class="w-8 md:w-12 h-[1px] bg-error"></span>
+                                <span
+                                    class="font-label-sm text-[10px] md:text-label-sm uppercase tracking-[0.3em] text-error">Access
+                                    Restricted</span>
+                            </div>
+                            <h2 class="text-4xl md:text-display-xl text-white uppercase leading-tight mb-8">남성 사원
+                                복지<br /><span class="text-error/30 tracking-tighter">[CLASSIFIED]</span></h2>
+                            <p class="text-sm md:text-body-lg text-zinc-500 leading-relaxed break-keep">
+                                승인된 인원에게만 공개되는 특별 프로토콜입니다.
+                                <span
+                                    class="redacted text-transparent select-none hover:text-white/80 hover:bg-transparent transition-all cursor-help">
+                                    기밀 유지 서약서 작성 후 적용되며 외부 유출 시 불이익이 발생할 수 있습니다.
+                                </span>
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-8 w-full max-w-[320px] shadow-2xl mx-auto lg:mx-0">
+                            <div id="pass-display"
+                                class="mb-6 h-12 bg-black flex items-center justify-end px-4 font-mono text-error tracking-[0.5em] text-xl border border-error/50">
+                                ****
+                            </div>
+                            <div class="grid grid-cols-3 gap-3 md:gap-4">
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="1">1</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="2">2</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="3">3</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="4">4</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="5">5</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="6">6</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="7">7</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="8">8</button>
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="9">9</button>
+
+                                <button
+                                    class="h-12 md:h-16 border border-white/5 text-error flex items-center justify-center opacity-50 cursor-default">
+                                    <span class="material-symbols-outlined">lock_open</span>
+                                </button>
+
+                                <button
+                                    class="num-btn h-12 md:h-16 border border-white/10 text-white hover:bg-error transition-all"
+                                    data-value="0">0</button>
+
+                                <button id="btn-clear"
+                                    class="h-12 md:h-16 border border-white/10 text-error flex items-center justify-center hover:bg-white/5 transition-all">
+                                    <span class="material-symbols-outlined">close</span>
+                                </button>
+                            </div>
+                            <button id="btn-grant"
+                                class="w-full mt-6 py-4 bg-error text-white text-xs uppercase tracking-widest font-bold active:scale-95 transition-transform">
+                                Grant Access
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-16 pb-24 max-w-[1440px] mx-auto text-center">
+            <div class="py-16 md:py-32 bg-surface-container-low border border-zinc-100">
+                <span class="font-label-sm text-secondary uppercase mb-6 block tracking-widest">Join Our Team</span>
+                <h2 class="text-2xl md:text-headline-lg font-bold mb-10 break-keep">앤솔로지와 함께 일상을 기록할<br />동료를 찾습니다.</h2>
+                <button
+                    class="w-full md:w-auto px-12 py-5 bg-primary text-on-primary text-xs uppercase tracking-[0.2em] font-bold"><a href="https://share.crack.wrtn.ai/7aqgpq4" target="_blank">입사 지원</a></button>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        class="w-full py-16 bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-900 px-6 md:px-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <div class="text-xl font-bold tracking-widest mb-4">ANTHOLOGY</div>
+                <p class="text-zinc-400 text-xs mb-6">Archive your Ordinary. 모든 순간이 기록이 되도록.</p>
+                <div class="flex justify-center md:justify-start gap-6 text-xs text-zinc-500 uppercase tracking-widest">
+                    <a href="#" class="hover:text-black dark:hover:text-white">Instagram</a>
+                    <a href="#" class="hover:text-black dark:hover:text-white">LinkedIn</a>
+                </div>
+            </div>
+            <button
+                class="px-8 py-3 border border-zinc-900 dark:border-zinc-50 text-xs uppercase tracking-widest hover:bg-zinc-900 hover:text-white dark:hover:bg-zinc-50 dark:hover:text-zinc-900 transition-all"><a href="https://share.crack.wrtn.ai/7aqgpq4" target="_blank">입사 지원</a></button>
+        </div>
+        <div class="text-center mt-12 text-[10px] text-zinc-400">© 2024 ANTHOLOGY. All rights reserved.</div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 1. 모바일 메뉴 제어
+            const $overlay = $('#mobile-overlay');
+
+            $('#menu-open').on('click', function () {
+                $overlay.removeClass('translate-x-full');
+                $('body').addClass('mobile-menu-open');
+            });
+
+            $('#menu-close').on('click', function () {
+                $overlay.addClass('translate-x-full');
+                $('body').removeClass('mobile-menu-open');
+            });
+
+            // 2. 비밀번호 입력 로직
+            let inputPass = "";
+            const $display = $('#pass-display');
+
+            // 숫자 버튼 클릭 시
+            $('.num-btn').on('click', function () {
+                if (inputPass.length < 4) {
+                    inputPass += $(this).data('value'); // data-value 속성값 가져오기
+                    updateDisplay();
+                }
+            });
+
+            // X(초기화) 버튼 클릭 시
+            $('#btn-clear').on('click', function () {
+                inputPass = "";
+                updateDisplay();
+            });
+
+            // 디스플레이 업데이트 함수
+            function updateDisplay() {
+                // 입력된 숫자를 보여주고 나머지는 *로 채워 4자리 유지
+                let displayText = inputPass.padEnd(4, '*');
+                $display.text(displayText);
+            }
+
+            // 3. 승인 버튼 클릭 (비밀번호 체크)
+            $('#btn-grant').on('click', function () {
+                if (inputPass === "6974") {
+                    // 정답 시 페이지 이동
+                    window.location.href = "/welfare.html";
+                } else {
+                    // 오답 시 시각 효과 및 알림
+                    $display.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+                    alert("액세스 권한이 없습니다. 올바른 프로토콜 코드를 입력하십시오.");
+
+                    // 입력값 초기화
+                    inputPass = "";
+                    updateDisplay();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
